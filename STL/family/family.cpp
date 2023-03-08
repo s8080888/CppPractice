@@ -16,10 +16,10 @@ const std::string family::longest_name_member()
     std::string longestName;
     for(human nowHuman : m_family)
     {
-        if(!longest || nowHuman.LenghtSize() > longest)
+        if(!longest || nowHuman.name().size() > longest)
         {
             longestName = nowHuman.name();
-            longest = nowHuman.LenghtSize();
+            longest = nowHuman.name().size();
         }
     }
     return longestName;

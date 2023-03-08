@@ -35,11 +35,6 @@ std::string human::name() const
     return m_name;
 }
 
-unsigned int human::LenghtSize()
-{
-    unsigned int StringSize= m_name.length();
-    return StringSize;
-}
 
 /*
 human::human(const char* name)

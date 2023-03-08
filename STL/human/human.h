@@ -15,7 +15,6 @@ class human
         void set_name(const std::string&&);
         std::string name() const;
 
-        unsigned int LenghtSize();
         
 
     private:
