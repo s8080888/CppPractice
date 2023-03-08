@@ -3,7 +3,7 @@
 int counta(int, char*[]);
 int main(int argc, char* argv[])
 {
-    std::cout << "There are " << counta(argc, argv) << " 'a's." << std::endl;
+    std::cout << "There are " << counta(argc - 1, argv + 1) << " 'a's." << std::endl;
     system("pause");
     return 0;
 }
@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 int counta(int argc, char* argv[])
 {
     int count = 0;
-    for (int i = 1; i < argc; ++i)
+    for (int i = 0; i < argc; ++i)
     {
         while(*(argv[i]) != '\0')
         {
