@@ -12,6 +12,16 @@ int main(int argc, char* argv[])
 
 void my_strcpy(const char input[], char k[], size_t size)
 {
+    /*
+    size_t idx = 0;
+    while(idx < size -1 && input[idx] != '\0')
+    {
+        k[idx] = input[idx];
+        idx += 1;
+    }
+    k[idx] = '\0';
+    */
+
     for(int i = 0;i < size - 1;++i)
     {
         if(input[i] == '\0')
