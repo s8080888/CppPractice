@@ -1,18 +1,17 @@
 #pragma once
 #include "../human/human.h"
 #include <vector>
+#include <iosfwd>
 
 class family
 {
     private:
-        size_t longest;
         std::vector<human> m_family;
     public:
-        family();
-        //std::ostream& operator<<();
-        ~family();
 
         void add_member(human);
-        const std::string longest_name_member();
-        int has_member_with_name(std::string);
+        const human& longest_name_member() const;
+        bool has_member_with_name(const std::string&) const;
 };
+
+std::ostream& operator<<(std::ostream&, const human&);

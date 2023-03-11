@@ -13,6 +13,11 @@ int main(int argc, char* argv[])
 void my_strcpy(const char input[], char k[], size_t size)
 {
     /*
+    if(size <0)
+    {
+        retrun;
+    }
+
     size_t idx = 0;
     while(idx < size -1 && input[idx] != '\0')
     {

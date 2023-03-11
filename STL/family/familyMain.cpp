@@ -2,7 +2,7 @@
 #include <utility>
 #include "../human/human.h"
 #include "family.h"
-
+//g++ .\family.cpp ..\human\human.cpp .\familyMain.cpp -o family
 int main(int argc, char* argv[])
 {
     family f;
@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     f.add_member(std::move(xiao));
 
     //Dada
- //   std::cout << dada << std::endl;
+    std::cout << dada << std::endl;
 
     //Xiao Xiao
     std::cout << f.longest_name_member() << std::endl;

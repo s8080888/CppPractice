@@ -1,39 +1,41 @@
 #include "family.h"
+#include <utility>
+#include <iostream>
 
-family::family()
-:longest(0)
-{ }
-
-family::~family(){ }
 
 void family::add_member(human family)
 {
-    m_family.push_back(family);
+    m_family.push_back(std::move(family));
 }
 
-const std::string family::longest_name_member()
+const human& family::longest_name_member() const
 {
-    std::string longestName;
-    for(human nowHuman : m_family)
+    const human* longest_name = nullptr;
+
+    for(const human& nowHuman : m_family)
     {
-        if(!longest || nowHuman.name().size() > longest)
+        if(longest_name == nullptr || longest_name->name().size() > nowHuman.name().size())
         {
-            longestName = nowHuman.name();
-            longest = nowHuman.name().size();
+            longest_name = &nowHuman;
         }
     }
-    return longestName;
+    return *longest_name;
 }
 
-int family::has_member_with_name(std::string whoName)
+bool family::has_member_with_name(const std::string& whoName) const
 {
-    for(human nowHuman : m_family)
+    for(const human& nowHuman : m_family)
     {
         if(nowHuman.name() == whoName)
         {
-            return 1;
+            return true;
         }
     }
 
     return 0;
+}
+
+std::ostream& operator<<(std::ostream& ostm, const human& human)
+{
+    return ostm << human.name();
 }
