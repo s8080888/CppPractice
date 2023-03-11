@@ -2,6 +2,7 @@
 #include <utility>
 #include "../human/human.h"
 #include "family.h"
+// cd family folder
 //g++ .\family.cpp ..\human\human.cpp .\familyMain.cpp -o family
 int main(int argc, char* argv[])
 {
